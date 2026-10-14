@@ -6,7 +6,7 @@ PostgreSQL 16 según `spec-.net` y `spec-python` de `test-manager-library-314555
 
 Rama local: `hu-01-dev`. HU-01 es iniciar sesión; `/health` pertenece a T-01. Este Compose despliega solo PostgreSQL. RNF-5 y T-20 (motor, API y frontend con un comando) están pendientes.
 
-Constitution artículo V y ADR-001 de ambas variantes asignan tablas, índices, restricciones y cinco categorías a las migraciones del backend: EF Core en .NET o Alembic en Python. Infra prepara el motor vacío. El esqueleto Laravel existente está fuera de esos planes.
+Constitution artículo V y ADR-001 de ambas variantes asignan tablas, índices, restricciones y cinco categorías a las migraciones del backend: Laravel en el reto (EF Core/Alembic son las tecnologías de referencia). Infra prepara el motor vacío. El reto exige Laravel: las migraciones del backend traducen los planes conservando exactamente el modelo y los ADR.
 
 ## 1. Preparar
 
