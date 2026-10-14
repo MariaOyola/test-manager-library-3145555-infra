@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: manager-library-db
+    environment:
+      POSTGRES_DB: library
+      POSTGRES_USER: library
+      POSTGRES_PASSWORD: library
+      TZ: UTC
+    ports:
+      - "5432:5432"
+    volumes:
+      - manager_library_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U library -d library"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - manager-library
+
+volumes:
+  manager_library_pgdata:
+
+networks:
+  manager-library:
+    name: manager-library
